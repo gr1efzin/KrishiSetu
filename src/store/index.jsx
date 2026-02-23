@@ -1,1 +1,1 @@
-export * from './atoms'
+export { useStore } from './useStore'

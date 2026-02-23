@@ -1,6 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import { useAtom } from 'jotai'
-import { shipmentsAtom } from '@/store/atoms'
+import { useStore } from '@/store'
 import {
   clusterShipments,
   generateMockShipments,
@@ -14,7 +13,8 @@ import {
  * Encapsulates all the data-fetching / computation logic from App.
  */
 export function useAppData() {
-  const [shipments, setShipments] = useAtom(shipmentsAtom)
+  const shipments = useStore((s) => s.shipments)
+  const setShipments = useStore((s) => s.setShipments)
 
   // Seed mock shipments once
   useEffect(() => {

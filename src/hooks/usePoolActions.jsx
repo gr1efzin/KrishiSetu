@@ -1,5 +1,4 @@
-import { useAtom, useSetAtom } from 'jotai'
-import { joinedPoolsAtom, notificationAtom, shipmentsAtom } from '@/store/atoms'
+import { useStore } from '@/store'
 
 const LOCATIONS = {
   bardhaman:   { name: "bardhaman",   lat: 23.2324, lon: 87.8615 },
@@ -17,9 +16,10 @@ const LOCATIONS = {
  * Extracts all mutation logic out of FarmerDashboard.
  */
 export function usePoolActions() {
-  const [joinedPools, setJoinedPools] = useAtom(joinedPoolsAtom)
-  const setNotification = useSetAtom(notificationAtom)
-  const setShipments = useSetAtom(shipmentsAtom)
+  const joinedPools = useStore((s) => s.joinedPools)
+  const setJoinedPools = useStore((s) => s.setJoinedPools)
+  const setNotification = useStore((s) => s.setNotification)
+  const setShipments = useStore((s) => s.setShipments)
 
   const addShipment = ({ crop, weight, location }) => {
     const baseLocation = LOCATIONS[location]

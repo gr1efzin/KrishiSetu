@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { useAtomValue } from 'jotai'
 import { FarmerDashboard } from '@/components/dashboard/FarmerDashboard'
 import { MarketAnalytics } from '@/components/analytics/MarketAnalytics'
 import { LogisticsVisualization } from '@/components/logistics/LogisticsVisualization'
 import { BottomNavigation, Header, DesktopSidebar } from '@/components/layout/Navigation'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { activeTabAtom, notificationAtom } from '@/store/atoms'
+import { useStore } from '@/store'
 import { useTranslation, useAppData } from '@/hooks'
 import { User, Settings, Bell, HelpCircle } from 'lucide-react'
 import './styles/index.css'
@@ -83,8 +82,8 @@ function ProfilePage() {
 }
 
 function App() {
-  const activeTab = useAtomValue(activeTabAtom)
-  const notification = useAtomValue(notificationAtom)
+  const activeTab = useStore((s) => s.activeTab)
+  const notification = useStore((s) => s.notification)
   const { clusters, benefits, marketPrices, predictions } = useAppData()
 
   const renderContent = () => {

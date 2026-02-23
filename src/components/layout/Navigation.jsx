@@ -1,6 +1,5 @@
-import { useAtom, useAtomValue } from 'jotai'
 import { cn } from "@/lib/utils"
-import { languageAtom, activeTabAtom } from "@/store/atoms"
+import { useStore } from '@/store'
 import { useTranslation } from '@/hooks'
 import { 
   Select, 
@@ -26,7 +25,8 @@ const navKeys = [
 ]
 
 function LanguageSwitcher() {
-  const [language, setLanguage] = useAtom(languageAtom)
+  const language = useStore((s) => s.language)
+  const setLanguage = useStore((s) => s.setLanguage)
   
   return (
     <Select value={language} onValueChange={setLanguage}>
@@ -45,7 +45,8 @@ function LanguageSwitcher() {
 
 export function BottomNavigation() {
   const t = useTranslation()
-  const [activeTab, setActiveTab] = useAtom(activeTabAtom)
+  const activeTab = useStore((s) => s.activeTab)
+  const setActiveTab = useStore((s) => s.setActiveTab)
   
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border md:hidden z-50">
@@ -104,7 +105,8 @@ export function Header() {
 
 export function DesktopSidebar() {
   const t = useTranslation()
-  const [activeTab, setActiveTab] = useAtom(activeTabAtom)
+  const activeTab = useStore((s) => s.activeTab)
+  const setActiveTab = useStore((s) => s.setActiveTab)
   
   return (
     <aside className="hidden md:flex flex-col w-64 border-r bg-card h-[calc(100vh-3.5rem)] sticky top-14">

@@ -1,10 +1,11 @@
-import { useAtomValue } from 'jotai'
-import { translationAtom } from '@/store/atoms'
+import { useCallback } from 'react'
+import { useStore } from '@/store'
 
 /**
- * Returns the translation function from the global language atom.
+ * Returns the translation function from the global store.
  * Usage: const t = useTranslation()
  */
 export function useTranslation() {
-  return useAtomValue(translationAtom)
+  const t = useStore((s) => s.t)
+  return useCallback((key) => t(key), [t])
 }
