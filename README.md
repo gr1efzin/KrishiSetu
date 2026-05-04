@@ -2,6 +2,8 @@
 
 **Krishi Setu** (কৃষি সেতু / कृषि सेतु) is a farmer transport pooling platform designed for West Bengal, India. It connects farmers to share transportation costs, access real-time market prices, and optimize logistics for agricultural produce.
 
+> Note: This repository contains the **frontend only**.
+
 ## Features
 
 ### Transport Pooling
@@ -24,14 +26,6 @@
 - বাংলা (Bengali)
 - हिंदी (Hindi)
 
-## Tech Stack
-
-- **Framework**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **UI Components**: [shadcn/ui](https://ui.shadcn.com/) (Radix UI + CVA)
-- **State Management**: [Jotai](https://jotai.org/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-
 ## Project Structure
 
 ```
@@ -53,11 +47,6 @@ src/
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18+ 
-- npm or pnpm
-
 ### Installation
 
 ```bash
@@ -71,8 +60,6 @@ npm install
 # Start development server
 npm run dev
 ```
-
-The app will be available at `http://localhost:5173`
 
 ### Build for Production
 
@@ -90,25 +77,10 @@ npm run preview
 | `npm run preview` | Preview production build locally |
 | `npm run lint` | Run ESLint |
 
-## Color Palette
-
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Primary | `#047857` | Main brand color (Emerald) |
-| Secondary | `#f59e0b` | Accent color (Amber) |
-| Background | `#f8fafc` | Page background (Slate) |
-
-## 🌍 Supported Locations
-
-The platform currently supports these West Bengal locations:
-- Bardhaman, Durgapur, Asansol
-- Siliguri, Howrah, Kolkata
-- Malda, Murshidabad, Nadia, Hooghly
-
-## 📄 License
+## License
 
 This project is part of a hackathon submission.
 
 ---
 
-**Built with ❤️ for the farmers of West Bengal**
+**Built with ❤️**
